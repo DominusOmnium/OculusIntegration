@@ -1,0 +1,250 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4670149681121027528
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1342545240445464407}
+  - component: {fileID: 5365292744208569584}
+  - component: {fileID: 4029542383562445363}
+  m_Layer: 0
+  m_Name: RightOculusControllerWithHand
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1342545240445464407
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4670149681121027528}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 3476689790850787236}
+  - {fileID: 6543873561795568494}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!95 &5365292744208569584
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4670149681121027528}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: ac700af90ab94224a879550acdfa9e53, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4029542383562445363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4670149681121027528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b935ac13867efa248b0a59977583d901, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controllerType: 1
+  thumbAnimator: {fileID: 9052052485173675111}
+--- !u!95 &9052052485173675111
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6543873561795411728}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 5f88cd8a84ae04e44aa823c6966ab68e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1001 &1457396868604974844
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1342545240445464407}
+    m_Modifications:
+    - target: {fileID: 5686134208185136530, guid: 1fd3a7c43c8190f4d8c167ebde694364,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686134208185136530, guid: 1fd3a7c43c8190f4d8c167ebde694364,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0091
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686134208185136530, guid: 1fd3a7c43c8190f4d8c167ebde694364,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.04130142
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686134208185136530, guid: 1fd3a7c43c8190f4d8c167ebde694364,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.70161045
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686134208185136530, guid: 1fd3a7c43c8190f4d8c167ebde694364,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70161045
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686134208185136530, guid: 1fd3a7c43c8190f4d8c167ebde694364,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.08799356
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686134208185136530, guid: 1fd3a7c43c8190f4d8c167ebde694364,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.087993175
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686134208185136530, guid: 1fd3a7c43c8190f4d8c167ebde694364,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686134208185136530, guid: 1fd3a7c43c8190f4d8c167ebde694364,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 14.297001
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686134208185136530, guid: 1fd3a7c43c8190f4d8c167ebde694364,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 179.99998
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686134208185136530, guid: 1fd3a7c43c8190f4d8c167ebde694364,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686134208185362930, guid: 1fd3a7c43c8190f4d8c167ebde694364,
+        type: 3}
+      propertyPath: m_Name
+      value: Right Hand Oculus
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686134208192617028, guid: 1fd3a7c43c8190f4d8c167ebde694364,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: ac700af90ab94224a879550acdfa9e53,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1fd3a7c43c8190f4d8c167ebde694364, type: 3}
+--- !u!4 &6543873561795568494 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5686134208185136530, guid: 1fd3a7c43c8190f4d8c167ebde694364,
+    type: 3}
+  m_PrefabInstance: {fileID: 1457396868604974844}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6543873561795411728 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5686134208185362924, guid: 1fd3a7c43c8190f4d8c167ebde694364,
+    type: 3}
+  m_PrefabInstance: {fileID: 1457396868604974844}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5353619918208057636
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1342545240445464407}
+    m_Modifications:
+    - target: {fileID: 8160415520993868858, guid: 8ac1c5861dd0d974d86b79fdf22761c1,
+        type: 3}
+      propertyPath: m_Name
+      value: Oculus Quest Controller - Right
+      objectReference: {fileID: 0}
+    - target: {fileID: 8823763343221991040, guid: 8ac1c5861dd0d974d86b79fdf22761c1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.005329085
+      objectReference: {fileID: 0}
+    - target: {fileID: 8823763343221991040, guid: 8ac1c5861dd0d974d86b79fdf22761c1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.023899972
+      objectReference: {fileID: 0}
+    - target: {fileID: 8823763343221991040, guid: 8ac1c5861dd0d974d86b79fdf22761c1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.10753094
+      objectReference: {fileID: 0}
+    - target: {fileID: 8823763343221991040, guid: 8ac1c5861dd0d974d86b79fdf22761c1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.29880798
+      objectReference: {fileID: 0}
+    - target: {fileID: 8823763343221991040, guid: 8ac1c5861dd0d974d86b79fdf22761c1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.106979705
+      objectReference: {fileID: 0}
+    - target: {fileID: 8823763343221991040, guid: 8ac1c5861dd0d974d86b79fdf22761c1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.033730563
+      objectReference: {fileID: 0}
+    - target: {fileID: 8823763343221991040, guid: 8ac1c5861dd0d974d86b79fdf22761c1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.947698
+      objectReference: {fileID: 0}
+    - target: {fileID: 8823763343221991040, guid: 8ac1c5861dd0d974d86b79fdf22761c1,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8823763343221991040, guid: 8ac1c5861dd0d974d86b79fdf22761c1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 8823763343221991040, guid: 8ac1c5861dd0d974d86b79fdf22761c1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -12.881
+      objectReference: {fileID: 0}
+    - target: {fileID: 8823763343221991040, guid: 8ac1c5861dd0d974d86b79fdf22761c1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8ac1c5861dd0d974d86b79fdf22761c1, type: 3}
+--- !u!4 &3476689790850787236 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8823763343221991040, guid: 8ac1c5861dd0d974d86b79fdf22761c1,
+    type: 3}
+  m_PrefabInstance: {fileID: 5353619918208057636}
+  m_PrefabAsset: {fileID: 0}

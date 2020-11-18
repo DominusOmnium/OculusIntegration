@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ParticleTesting : MonoBehaviour
 {
-    /*[SerializeField]
+    [SerializeField]
     ParticleSystem primaryPressParticle;
     [SerializeField]
     ParticleSystem secondaryPressParticle;
@@ -21,10 +21,10 @@ public class ParticleTesting : MonoBehaviour
     [SerializeField]
     GameObject axisHintParticle;
 
-    XRInputWatcher inputWatcher;
+    InputWatcher inputWatcher;
     void Awake()
     {
-        inputWatcher = FindObjectOfType<XRInputWatcher>();
+        inputWatcher = FindObjectOfType<InputWatcher>();
     }
 
     private void OnEnable()
@@ -40,5 +40,5 @@ public class ParticleTesting : MonoBehaviour
     void Update()
     {
         
-    }*/
+    }
 }

@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
-//using UnityEngine.XR.Interaction.Toolkit;
 
 public class HandController : MonoBehaviour
 {
     [SerializeField]
-    OVRInput.Controller controllerType = OVRInput.Controller.None;
+    OVRInput.Controller controllerType;
     /*[SerializeField]
     XRBaseControllerInteractor controllerInteractor = null;*/
     [SerializeField]
@@ -48,10 +47,10 @@ public class HandController : MonoBehaviour
             inputWatcher.rightGripButtonPress.AddListener(onGripButtonPress);
             inputWatcher.rightTriggerButtonPress.AddListener(onTriggerButtonPress);
         }
-        //controllerInteractor.onHoverEnter.AddListener(onHoverEnter);
-        //controllerInteractor.onHoverExit.AddListener(onHoverExit);
-        //controllerInteractor.onSelectEnter.AddListener(onSelectEnter);
-        //controllerInteractor.onSelectExit.AddListener(onSelectExit);
+        /*controllerInteractor.onHoverEnter.AddListener(onHoverEnter);
+        controllerInteractor.onHoverExit.AddListener(onHoverExit);
+        controllerInteractor.onSelectEnter.AddListener(onSelectEnter);
+        controllerInteractor.onSelectExit.AddListener(onSelectExit);*/
     }
 
     private void OnDisable()
@@ -74,10 +73,10 @@ public class HandController : MonoBehaviour
             inputWatcher.rightGripButtonPress.RemoveListener(onGripButtonPress);
             inputWatcher.rightTriggerButtonPress.RemoveListener(onTriggerButtonPress);
         }
-        //controllerInteractor.onHoverEnter.RemoveListener(onHoverEnter);
-        //controllerInteractor.onHoverExit.RemoveListener(onHoverExit);
-        //controllerInteractor.onSelectEnter.RemoveListener(onSelectEnter);
-        //controllerInteractor.onSelectExit.RemoveListener(onSelectExit);
+        /*controllerInteractor.onHoverEnter.RemoveListener(onHoverEnter);
+        controllerInteractor.onHoverExit.RemoveListener(onHoverExit);
+        controllerInteractor.onSelectEnter.RemoveListener(onSelectEnter);
+        controllerInteractor.onSelectExit.RemoveListener(onSelectExit);*/
     }
 
     /*private void onHoverEnter(XRBaseInteractable interactable)
@@ -159,4 +158,3 @@ public class HandController : MonoBehaviour
         lastHapticTime = Time.time;
     }
 }
-    

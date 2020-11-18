@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Right Oculus Controller With Hands
+  m_Controller: {fileID: 9100000, guid: 0fe99039871f98543945b76741ab817f, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 31e82b6ef7b67484fb5a7e7872515303, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 04a6159cb287cbe49b96638f8bf714c9, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: e594be8aac6aa7842bee1d405264a3f1, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: f4131494567000e41a60a8a4935c0820, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 2fad4b7d2a7ed6b48ba5ebab5f9b264c, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 089fe933188d67e4b947d5601b22ff7c, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 1a6118e54700a884abb0174c175906f4, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d96ddda35a2fa774fa7bd3243ca77c4e, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 63c24c0870b2f3e45baefca2a15c8514, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: db0794bb037221c43b4adad437653d28, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 7f60e0a1173e174438b6bfae3b817151, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 088d0cd9eac9aac4ca1f3e325e591f7a, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: f4131494567000e41a60a8a4935c0820, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: f4131494567000e41a60a8a4935c0820, type: 2}
