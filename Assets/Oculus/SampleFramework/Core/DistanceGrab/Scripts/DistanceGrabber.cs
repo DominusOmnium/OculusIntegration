@@ -157,7 +157,7 @@ namespace OculusSampleFramework
 
                 // If it's within a certain distance respect the no-snap.
                 Vector3 closestPointOnBounds = closestGrabbableCollider.ClosestPointOnBounds(m_gripTransform.position);
-                if(!m_grabbedObj.snapPosition && !m_grabbedObj.snapOrientation && m_noSnapThreshhold > 0.0f && (closestPointOnBounds - m_gripTransform.position).magnitude < m_noSnapThreshhold)
+                if(!m_grabbedObj.matchGrabPosition && !m_grabbedObj.matchGrabOrientation && m_noSnapThreshhold > 0.0f && (closestPointOnBounds - m_gripTransform.position).magnitude < m_noSnapThreshhold)
                 {
                     Vector3 relPos = m_grabbedObj.transform.position - transform.position;
                     m_movingObjectToHand = false;
@@ -170,17 +170,17 @@ namespace OculusSampleFramework
                 {
                     // Set up offsets for grabbed object desired position relative to hand.
                     m_grabbedObjectPosOff = m_gripTransform.localPosition;
-                    if (m_grabbedObj.snapOffset)
+                    if (m_grabbedObj.grabTransform)
                     {
-                        Vector3 snapOffset = m_grabbedObj.snapOffset.position;
+                        Vector3 snapOffset = m_grabbedObj.grabTransform.position;
                         if (m_controller == OVRInput.Controller.LTouch) snapOffset.x = -snapOffset.x;
                         m_grabbedObjectPosOff += snapOffset;
                     }
 
                     m_grabbedObjectRotOff = m_gripTransform.localRotation;
-                    if (m_grabbedObj.snapOffset)
+                    if (m_grabbedObj.grabTransform)
                     {
-                        m_grabbedObjectRotOff = m_grabbedObj.snapOffset.rotation * m_grabbedObjectRotOff;
+                        m_grabbedObjectRotOff = m_grabbedObj.grabTransform.rotation * m_grabbedObjectRotOff;
                     }
                 }
 

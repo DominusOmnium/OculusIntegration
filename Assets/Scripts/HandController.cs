@@ -19,6 +19,7 @@ public class HandController : MonoBehaviour
     private InputWatcher inputWatcher;
     private Animator animator;
     private float lastHapticTime;
+    private bool isSnapping;
 
     private void Awake()
     {
@@ -147,6 +148,24 @@ public class HandController : MonoBehaviour
     private void onThumbFingerTouch(bool val)
     {
         animator.SetBool("ThumbTouch", val);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        animator.SetBool("PrepareSnapping", true);
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        animator.SetBool("PrepareSnapping", false);
+    }
+
+    private void Update()
+    {
+        if (animator.GetBool("Snapping") == false && GetComponent<OVRGrabber>().grabbedObject != null)
+            animator.SetBool("Snapping", true);
+        else if (animator.GetBool("Snapping") == true && GetComponent<OVRGrabber>().grabbedObject == null)
+            animator.SetBool("Snapping", false);
     }
 
     private void OnCollisionEnter(Collision collision)

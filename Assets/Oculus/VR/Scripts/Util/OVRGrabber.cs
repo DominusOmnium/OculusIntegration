@@ -274,15 +274,14 @@ public class OVRGrabber : MonoBehaviour
             m_lastRot = transform.rotation;
 
             // Set up offsets for grabbed object desired position relative to hand.
-            if(m_grabbedObj.snapPosition)
+            if(m_grabbedObj.matchGrabPosition)
             {
-                m_grabbedObjectPosOff = m_gripTransform.localPosition;
-                if(m_grabbedObj.snapOffset)
+                if(m_grabbedObj.grabTransform)
                 {
-                    Vector3 snapOffset = m_grabbedObj.snapOffset.position;
-                    if (m_controller == OVRInput.Controller.LTouch) snapOffset.x = -snapOffset.x;
-                    m_grabbedObjectPosOff += snapOffset;
+                    m_grabbedObjectPosOff = m_gripTransform.localPosition - m_grabbedObj.grabTransform.localPosition;
                 }
+                else
+                    m_grabbedObjectPosOff = m_gripTransform.localPosition;
             }
             else
             {
@@ -291,13 +290,14 @@ public class OVRGrabber : MonoBehaviour
                 m_grabbedObjectPosOff = relPos;
             }
 
-            if (m_grabbedObj.snapOrientation)
+            if (m_grabbedObj.matchGrabOrientation)
             {
-                m_grabbedObjectRotOff = m_gripTransform.localRotation;
-                if(m_grabbedObj.snapOffset)
+                if(m_grabbedObj.grabTransform)
                 {
-                    m_grabbedObjectRotOff = m_grabbedObj.snapOffset.rotation * m_grabbedObjectRotOff;
+                    m_grabbedObjectRotOff = m_grabbedObj.grabTransform.localRotation * (m_grabbedObj.snapTransform.rotation * Quaternion.Inverse(m_grabbedObj.transform.rotation));
                 }
+                else
+                    m_grabbedObjectRotOff = m_gripTransform.localRotation;
             }
             else
             {

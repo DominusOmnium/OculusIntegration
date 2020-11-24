@@ -40,6 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3658571980998769335}
   - component: {fileID: 1056086904487141200}
+  - component: {fileID: 4774677347421371844}
   m_Layer: 12
   m_Name: Holder Interactable 2
   m_TagString: Untagged
@@ -76,6 +77,21 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.035
   m_Center: {x: 0, y: 0.06, z: 0}
+--- !u!114 &4774677347421371844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118829417612672840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa139018b68e37f44a1a48c3544aaee2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  snapTransform: {fileID: 227301018041987243}
+  snapPosition: 1
+  snapRotation: 1
 --- !u!1001 &6221063180498534634
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -25,21 +25,25 @@ public class OVRGrabbable : MonoBehaviour
     [SerializeField]
     protected bool m_allowOffhandGrab = true;
     [SerializeField]
-    protected bool m_snapPosition = false;
+    protected bool m_matchGrabPosition = false;
     [SerializeField]
-    protected bool m_snapOrientation = false;
+    protected bool m_matchGrabOrientation = false;
     [SerializeField]
-    protected Transform m_snapOffset;
+    protected Transform m_grabTransform;
+    [SerializeField]
+    protected Transform m_snapTransform;
     [SerializeField]
     protected Collider[] m_grabPoints = null;
 
     protected bool m_grabbedKinematic = false;
     protected Collider m_grabbedCollider = null;
     protected OVRGrabber m_grabbedBy = null;
+    protected OVRSnapPoint m_snappedBy = null;
+    protected Collider m_snappedCollider = null;
 
-	/// <summary>
-	/// If true, the object can currently be grabbed.
-	/// </summary>
+    /// <summary>
+    /// If true, the object can currently be grabbed.
+    /// </summary>
     public bool allowOffhandGrab
     {
         get { return m_allowOffhandGrab; }
@@ -53,57 +57,91 @@ public class OVRGrabbable : MonoBehaviour
         get { return m_grabbedBy != null; }
     }
 
-	/// <summary>
-	/// If true, the object's position will snap to match snapOffset when grabbed.
-	/// </summary>
-    public bool snapPosition
+    /// <summary>
+    /// If true, the object is currently snapped.
+    /// </summary>
+    public bool isSnapped
     {
-        get { return m_snapPosition; }
+        get { return m_snappedBy != null; }
     }
 
-	/// <summary>
-	/// If true, the object's orientation will snap to match snapOffset when grabbed.
-	/// </summary>
-    public bool snapOrientation
+    /// <summary>
+    /// If true, the object's position will match grabTransform when grabbed.
+    /// </summary>
+    public bool matchGrabPosition
     {
-        get { return m_snapOrientation; }
+        get { return m_matchGrabPosition; }
     }
 
-	/// <summary>
-	/// An offset relative to the OVRGrabber where this object can snap when grabbed.
-	/// </summary>
-    public Transform snapOffset
+    /// <summary>
+    /// If true, the object's orientation will match grabTransform when grabbed.
+    /// </summary>
+    public bool matchGrabOrientation
     {
-        get { return m_snapOffset; }
+        get { return m_matchGrabOrientation; }
     }
 
-	/// <summary>
-	/// Returns the OVRGrabber currently grabbing this object.
-	/// </summary>
+    public Transform grabTransform
+    {
+        get { return m_grabTransform; }
+    }
+
+    public Transform snapTransform
+    {
+        get { return m_snapTransform; }
+    }
+
+    /// <summary>
+    /// Returns the OVRGrabber currently grabbing this object.
+    /// </summary>
     public OVRGrabber grabbedBy
     {
         get { return m_grabbedBy; }
     }
 
-	/// <summary>
-	/// The transform at which this object was grabbed.
-	/// </summary>
+    /// <summary>
+    /// Returns the OVRSnapPoint currently snapping this object.
+    /// </summary>
+    public OVRSnapPoint snappedBy
+    {
+        get { return m_snappedBy; }
+    }
+
+    /// <summary>
+    /// The transform at which this object was grabbed.
+    /// </summary>
     public Transform grabbedTransform
     {
         get { return m_grabbedCollider.transform; }
     }
 
-	/// <summary>
-	/// The Rigidbody of the collider that was used to grab this object.
-	/// </summary>
+    /// <summary>
+    /// The transform at which this object was snapped.
+    /// </summary>
+    public Transform snappedTransform
+    {
+        get { return m_snappedCollider.transform; }
+    }
+
+    /// <summary>
+    /// The Rigidbody of the collider that was used to grab this object.
+    /// </summary>
     public Rigidbody grabbedRigidbody
     {
         get { return m_grabbedCollider.attachedRigidbody; }
     }
 
-	/// <summary>
-	/// The contact point(s) where the object was grabbed.
-	/// </summary>
+    /// <summary>
+    /// The Rigidbody of the collider that was used to snap this object.
+    /// </summary>
+    public Rigidbody snappedRigidbody
+    {
+        get { return m_snappedCollider.attachedRigidbody; }
+    }
+
+    /// <summary>
+    /// The contact point(s) where the object was grabbed.
+    /// </summary>
     public Collider[] grabPoints
     {
         get { return m_grabPoints; }
@@ -114,15 +152,16 @@ public class OVRGrabbable : MonoBehaviour
 	/// </summary>
 	virtual public void GrabBegin(OVRGrabber hand, Collider grabPoint)
     {
+        Debug.Log("GrabBegin");
         m_grabbedBy = hand;
         m_grabbedCollider = grabPoint;
         gameObject.GetComponent<Rigidbody>().isKinematic = true;
     }
 
-	/// <summary>
-	/// Notifies the object that it has been released.
-	/// </summary>
-	virtual public void GrabEnd(Vector3 linearVelocity, Vector3 angularVelocity)
+    /// <summary>
+    /// Notifies the object that it has been released.
+    /// </summary>
+    virtual public void GrabEnd(Vector3 linearVelocity, Vector3 angularVelocity)
     {
         Debug.Log("GrabEnd");
         Rigidbody rb = gameObject.GetComponent<Rigidbody>();
@@ -131,6 +170,17 @@ public class OVRGrabbable : MonoBehaviour
         rb.angularVelocity = angularVelocity;
         m_grabbedBy = null;
         m_grabbedCollider = null;
+    }
+
+    /// <summary>
+    /// Notifies the object that it has been snapped.
+    /// </summary>
+    virtual public void SnapBegin(OVRSnapPoint sp, Collider snapPoint)
+    {
+        Debug.Log("SnapBegin");
+        m_snappedBy = sp;
+        m_snappedCollider = snapPoint;
+        gameObject.GetComponent<Rigidbody>().isKinematic = true;
     }
 
     void Awake()

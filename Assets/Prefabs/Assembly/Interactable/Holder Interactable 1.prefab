@@ -200,6 +200,7 @@ GameObject:
   - component: {fileID: 1523026121227025971}
   - component: {fileID: 3156889562501087880}
   - component: {fileID: 5187224695474386845}
+  - component: {fileID: 5429521228040861223}
   m_Layer: 12
   m_Name: Holder Interactable 1
   m_TagString: Untagged
@@ -345,3 +346,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fbd17440d0557941bbfbf84d84bcebd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5429521228040861223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9061097288425851950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa139018b68e37f44a1a48c3544aaee2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  snapTransform: {fileID: 4257192704061200219}
+  snapPosition: 1
+  snapRotation: 1
